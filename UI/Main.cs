@@ -16,25 +16,25 @@ namespace UI
 
         private void ProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogProduct = new Catalog<Product>(db.Products);
+            var catalogProduct = new Catalog<Product>(db.Products, db);
             catalogProduct.Show();
         }
 
         private void SellerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var sellerProduct = new Catalog<Seller>(db.Sellers);
+            var sellerProduct = new Catalog<Seller>(db.Sellers, db);
             sellerProduct.Show();
         }
 
         private void CustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var customerProduct = new Catalog<Customer>(db.Customers);
+            var customerProduct = new Catalog<Customer>(db.Customers, db);
             customerProduct.Show();
         }
 
         private void CheckToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var checkProduct = new Catalog<Check>(db.Checks);
+            var checkProduct = new Catalog<Check>(db.Checks, db);
             checkProduct.Show();
         }
 
