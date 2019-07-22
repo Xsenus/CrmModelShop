@@ -40,6 +40,11 @@ namespace CrmBl.Model
         /// </summary>
         public bool IsModel { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Count => Queue.Count;
+
         public CashDesk(int number, Seller seller)
         {
             Number = number;
@@ -66,6 +71,12 @@ namespace CrmBl.Model
         public decimal Dequeue()
         {
             decimal sum = 0;
+
+            if (Queue.Count == 0)
+            {
+                return 0;
+            }
+
             var card = Queue.Dequeue();
 
             if (card != null)
